@@ -8,8 +8,8 @@ import org.junit.jupiter.api.*;
 import java.util.List;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@DisplayName("TelegramHelper Test - Java")
-public class TelegramHelperJavaTest {
+@DisplayName("TelegramSimpleHelper Test - Java")
+public class TelegramSimpleHelperJavaTest {
 
     private List<TelegramInfo> telegramInfoList;
 
@@ -24,12 +24,12 @@ public class TelegramHelperJavaTest {
     public void sendMessage() {
         // given
         TelegramInfo telegramInfo = telegramInfoList.get(0);
-        TelegramHelper telegramHelper = new TelegramHelper(telegramInfo);
-        String message = "TelegramHelper Java Test";
+        TelegramSimpleHelper.setup(telegramInfo);
+        String message = "TelegramSimpleHelper Java Test";
 
         // when
-        List<SendResponse> sendResponseList = telegramHelper.sendMessage(message + " 1");
-        SendResponse sendResponse = telegramHelper.sendMessage(
+        List<SendResponse> sendResponseList = TelegramSimpleHelper.sendMessage(message + " 1");
+        SendResponse sendResponse = TelegramSimpleHelper.sendMessage(
                 telegramInfo.getChatIdList().stream().findFirst().orElse(0L),
                 message + " 2"
         );

@@ -6,8 +6,8 @@ import org.junit.jupiter.api.*
 import org.junit.jupiter.api.function.Executable
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@DisplayName("TelegramHelper Test - Kotlin")
-internal class TelegramHelperKotlinTest {
+@DisplayName("TelegramSimpleHelper Test - Kotlin")
+internal class TelegramSimpleHelperKotlinTest {
 
     private lateinit var telegramInfoList: List<TelegramInfo>
 
@@ -22,12 +22,12 @@ internal class TelegramHelperKotlinTest {
     fun sendMessage() {
         // given
         val telegramInfo = telegramInfoList.first()
-        val telegramHelper = TelegramHelper(telegramInfo)
-        val message = "TelegramHelper Kotlin Test"
+        TelegramSimpleHelper.setup(telegramInfo)
+        val message = "TelegramSimpleHelper Kotlin Test"
 
         // when
-        val sendResponseList = telegramHelper.sendMessage("$message 1")
-        val sendResponse = telegramHelper.sendMessage(telegramInfo.chatIdList.first(), "$message 2")
+        val sendResponseList = TelegramSimpleHelper.sendMessage("$message 1")
+        val sendResponse = TelegramSimpleHelper.sendMessage(telegramInfo.chatIdList.first(), "$message 2")
 
         // then
         Assertions.assertAll(

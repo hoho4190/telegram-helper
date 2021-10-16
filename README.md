@@ -2,14 +2,26 @@
 
 ### Kotlin
 ```kotlin
+// TelegramHelper
 val telegramInfo = TelegramInfo(TOKEN, CHAT_ID)
 val telegramHelper = TelegramHelper(telegramInfo)
 val responseList: List<SendResponse> = telegramHelper.sendMessage(MESSAGE)
+
+// TelegramSimpleHelper
+val telegramInfo = TelegramInfo(TOKEN, CHAT_ID)
+TelegramSimpleHelper.setup(telegramInfo)
+val responseList: List<SendResponse> = TelegramSimpleHelper.sendMessage(MESSAGE)
 ```
 
 ### Java
-```java 
+```java
+// TelegramHelper
 TelegramInfo telegramInfo = new TelegramInfo(TOKEN, CHAT_ID);
 TelegramHelper telegramHelper = new TelegramHelper(telegramInfo);
 List<SendResponse> responseList = telegramHelper.sendMessage(MESSAGE);
+
+// TelegramSimpleHelper
+TelegramInfo telegramInfo = new TelegramInfo(TOKEN, CHAT_ID);
+TelegramSimpleHelper.setup(telegramInfo);
+List<SendResponse> sendResponseList = TelegramSimpleHelper.sendMessage(MESSAGE);
 ```
