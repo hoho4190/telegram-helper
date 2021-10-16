@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.hoho"
-version = "1.0.1"
+version = "1.0.2-SNAPSHOT"
 
 publishing {
     publications {
