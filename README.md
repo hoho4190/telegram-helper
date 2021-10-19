@@ -3,13 +3,13 @@
 
 ## Usage
 ```kotlin
-// TelegramHelper
 val telegramInfo = TelegramInfo(TOKEN, CHAT_ID)
+
+// TelegramHelper
 val telegramHelper = TelegramHelper(telegramInfo)
 val responseList: List<SendResponse> = telegramHelper.sendMessage(MESSAGE)
 
 // TelegramSimpleHelper
-val telegramInfo = TelegramInfo(TOKEN, CHAT_ID)
 TelegramSimpleHelper.setup(telegramInfo)
 val responseList: List<SendResponse> = TelegramSimpleHelper.sendMessage(MESSAGE)
 ```
